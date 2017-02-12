@@ -65,9 +65,9 @@ public class Comunicacion extends Observable implements Runnable {
         multi.close();
     }
 
-    private boolean intento() {
+    public boolean intento() {
+        multi = new MulticastSocket();
         try {
-            multi = new MulticastSocket();
             setChanged();
             notifyObservers("Connection started");
             clearChanged();
